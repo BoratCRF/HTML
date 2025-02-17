@@ -1,0 +1,25 @@
+body {
+    background-color:rgb(197, 193, 193)
+}
+.dadosPessoais {
+    text-align: center;
+}
+.objetivos {
+    text-align: center;
+}
+.experiencias {
+    text-align: center;
+}
+.habilidades {
+    text-align: center;
+   
+}
+/* .habilidades ol li {
+    list-style-type: none;
+   
+} */
+
+.formacoes {
+    text-align: center;
+}
+
