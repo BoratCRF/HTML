@@ -1,0 +1,25 @@
+body {
+    background-color: rgba(255, 255, 255, 0.555)
+}
+
+header {
+    background-color: brown;
+    padding: 10px;
+    color: white;
+    text-align: center;
+}
+nav ul {
+    padding: 0;
+    background-color:darkred;
+    margin: 0;
+    text-align: center;
+}
+nav ul li {
+    display: inline;
+    padding: 20px;
+}
+nav ul li a {
+    color:azure;
+    text-decoration: none;
+}
+

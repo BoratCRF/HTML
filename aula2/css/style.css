@@ -1,0 +1,66 @@
+/* reset de página para evitar confirugação */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: rgb(201, 182, 177);
+}
+
+/* estilização do header (cabeçalho) */
+
+header {
+    background-color: brown;
+    color: aliceblue;
+    padding: 10px;
+}
+header img {
+    border-radius: 10px;
+}
+
+/* estilização do menu  */
+
+nav ul {
+    padding: 0;
+    background-color:darkred;
+    margin: 0;
+}
+nav ul li {
+    display: inline;
+    padding: 20px;
+}
+
+nav ul li a {
+    color:azure;
+    text-decoration: none;
+}
+
+/* estilizando a seção de pacote */
+
+.pacote {
+    display: inline-block;
+    width: 300px;
+    background-color:rgb(182, 162, 162) ;
+    padding: 10px;
+    margin: 15px;
+    border-radius: 10px;
+    box-shadow:2px 2px 10px rgba(0, 0, 0, 0.3)
+}
+
+.pacote img {
+    border-radius: 10px;
+}
+
+.preco {
+    color:chocolate;
+    padding: 10px;
+    font-weight: bold;
+}
+
+footer {
+    background-color: brown;
+    color: aliceblue;
+    padding: 10px;
+    margin-top: 20px;
+}
