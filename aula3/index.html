@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="img/flamengo.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/carrossel.css">
+    <title>Minha Página HTML</title>
+
+</head>
+
+<body>
+    <header class="configura1"> <!-- cabeçalho do conteúdo -->
+        <img src="img/2flamengo.png" alt="" width="120" height="100">
+        <h1> Jornada Viagem</h1>
+        <p>Explorando o mundo com você!</p>
+    </header>
+    <nav> <!-- Área de navegação (menus) -->
+        <ul>
+            <li><a href="https://www.flamengo.com.br/" target="_blank">Mengo</a></li>
+            <li><a href="#pacotes">Pacotes</a></li>
+            <li><a href="#pacotes">contato</a></li>
+            <li><a href="filiais.html">filiais</a></li>
+        </ul>
+        <!-- <ul type="circle">
+            <li>Blog</li>
+            <li>Pacotes</li>
+            <li>contato</li>
+        </ul> -->
+    </nav>
+    <main> <!-- parte principal do texto -->
+        <section class="configura1" id="sobre">
+            <h2>Sobre nós</h2>
+            <p>Somos o Flamengo Malvadão</p>
+        </section>
+        <section id="carrossel" class="container">
+            <article class="carousel">
+                <input type="radio" name="slides" checked="checked" id="slide-1">
+                <input type="radio" name="slides" id="slide-2">
+                <input type="radio" name="slides" id="slide-3">
+                <input type="radio" name="slides" id="slide-4">
+                <input type="radio" name="slides" id="slide-5">
+                <input type="radio" name="slides" id="slide-6">
+                <ul class="carousel__slides">
+                    <li class="carousel__slide">
+                        <figure>
+                            <img src="https://picsum.photos/id/1041/800/450" alt="">
+                            <figcaption>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                <span class="credit">Photo: Tim Marshall</span>
+                            </figcaption>
+                        </figure>
+                    </li>
+                    <li class="carousel__slide">
+                        <figure>
+                            <img src="https://picsum.photos/id/1043/800/450" alt="">
+                            <figcaption>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                <span class="credit">Photo: Christian Joudrey</span>
+                            </figcaption>
+                        </figure>
+                    </li>
+                    <li class="carousel__slide">
+                        <figure>
+                            <img src="https://picsum.photos/id/1044/800/450" alt="">
+                            <figcaption>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                <span class="credit">Photo: Steve Carter</span>
+                            </figcaption>
+                        </figure>
+                    </li>
+                    <li class="carousel__slide">
+                        <figure>
+                            <img src="https://picsum.photos/id/1045/800/450" alt="">
+                            <figcaption>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                <span class="credit">Photo: Aleksandra Boguslawska</span>
+                            </figcaption>
+                        </figure>
+                    </li>
+                    <li class="carousel__slide">
+                        <figure>
+                            <img src="https://picsum.photos/id/1049/800/450" alt="">
+                            <figcaption>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                <span class="credit">Photo: Rosan Harmens</span>
+                            </figcaption>
+                        </figure>
+                    </li>
+                    <li class="carousel__slide">
+                        <figure>
+                            <img src="https://picsum.photos/id/1052/800/450" alt="">
+                            <figcaption>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                <span class="credit">Photo: Annie Spratt</span>
+                            </figcaption>
+                        </figure>
+                    </li>
+                </ul>
+                <ul class="carousel__thumbnails">
+                    <li>
+                        <label for="slide-1"><img src="https://picsum.photos/id/1041/150/150" alt=""></label>
+                    </li>
+                    <li>
+                        <label for="slide-2"><img src="https://picsum.photos/id/1043/150/150" alt=""></label>
+                    </li>
+                    <li>
+                        <label for="slide-3"><img src="https://picsum.photos/id/1044/150/150" alt=""></label>
+                    </li>
+                    <li>
+                        <label for="slide-4"><img src="https://picsum.photos/id/1045/150/150" alt=""></label>
+                    </li>
+                    <li>
+                        <label for="slide-5"><img src="https://picsum.photos/id/1049/150/150" alt=""></label>
+                    </li>
+                    <li>
+                        <label for="slide-6"><img src="https://picsum.photos/id/1052/150/150" alt=""></label>
+                    </li>
+                </ul>
+            </article>
+        </section>
+        <section class="configura1" id="Pacotes">
+            <h2>Nossos Pacotes</h2>
+            <article class="pacote">
+                <h3>Japão</h3>
+                <img src="img/mengonojapa.jfif" alt="" width="200" height="150">
+                <p>Motel + SacanaAéreo</p>
+                <p class="preco">R$ 1.069</p>
+            </article>
+            <article class="pacote">
+                <h3>Tupi</h3>
+                <img src="img/flamengo x tupi outubro 1970 res.jpg" alt="" width="200" height="150">
+                <p>Hotel + Levando Até aqui</p>
+                <p class="preco">R$ 1.069</p>
+            </article>
+            <article class="pacote">
+                <h3>Joá</h3>
+                <img src="img/flamengo_241119_mg_80793437.webp " alt="" width="200" height="150">
+                <p>Hotel + Levando Até aqui também</p>
+                <p class="preco">R$ 1.069</p>
+            </article>
+        </section>
+        <section id="midia">
+            <h2>Curta o Hino Oficial do Flamengo</h2>
+            <video autoplay loop width="320" height="240" src="videos/Bandeira_flamengo.mp4" type="video/mp4">
+                Seu navegador
+                não suporta a tag video
+            </video>
+            <audio controls>
+                <source src="audios/hino-do-flamengo-hino-oficial.mp3" type="audio/mp3">
+                Seu navegador não suporta a tag audio
+            </audio>
+        </section>
+    </main>
+    <aside class="mapa">
+        <h3>Onde Estamos</h3>
+        <div class="mapa-conteudo">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3673.2286341399436!2d-43.221755924687464!3d-22.97861857920453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9bd5b674408e9b%3A0xb2f772e74408cba1!2sClube%20de%20Regatas%20do%20Flamengo!5e0!3m2!1spt-BR!2sbr!4v1740159396428!5m2!1spt-BR!2sbr"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            <address>
+                Av. Borges de Medeiros, 997 <br>
+                Gávea, Rio de Janeiro - RJ, <br>
+                Cep 22430-041
+            </address>
+        </div>
+    </aside>
+    <footer> <!-- rodapé da página -->
+        <div id="footer-contato">
+            <p>&copy; 2025 Jornada de viagens. Todos os direitos reservados. Entendeu piranha ? 😊</p>
+        </div>
+        <div id="footer-contato">
+            <h2>contato</h2>
+            <p>Email: meucontato@gmail.com</p>
+            <p>Telefone: (21)4002-8922</p>
+        </div>
+        <div class="footer-social">
+            <a href="https://www.facebook.com/FlamengoOficial" target="_blank"><img src="img/face_logo.png"
+                    width="20"></a>
+            <a href="https://www.instagram.com/flamengo/" target="_blank"><img src="img/insta_logo.png"
+                    width="20"></a>
+            <a href="https://x.com/flamengo?mx=2" target="_blank"><img src="img/x_logo.png" width="20"></a>
+        </div>
+    </footer>
+    <!-- <script src="js/script.js"></script> -->
+</body>
+
+</html>
