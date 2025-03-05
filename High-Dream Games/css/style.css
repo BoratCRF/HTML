@@ -1,0 +1,61 @@
+/* Style Header */
+
+header {
+    background-color: brown;
+    color: aliceblue;
+    padding: 10px;
+}
+header img {
+    border-radius: 10px;
+}
+
+.navbar-brand {
+    padding: 10px;
+}
+
+
+/* nav ul {
+    padding: 0;
+    background-color:darkred;
+    margin: 0;
+} */
+nav {
+    display: inline;
+    padding: 20px;
+    color:azure;
+    text-decoration: none;
+}
+
+
+/* reset de página para evitar confirugação */
+
+body {
+    font-family: Arial, sans-serif;
+    margin-top: auto;
+    padding: 0;
+    text-align: center;
+    background-color: rgb(75, 73, 73);
+}
+
+/* Style Footer */
+
+footer {
+    background-color: brown;
+    color: aliceblue;
+    margin: 0px;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+
+.footer-contato {
+    text-align: center;
+    justify-content: center;
+}
+
+.footer-social img {
+width: 25px;
+}
