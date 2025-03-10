@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- icons bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Link CSS dos Jogos -->
+    <link rel="stylesheet" href="css/styleGames.css">
+    <title>High-dream Games - To The Hel</title>
+</head>
+
+<header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <figure>
+                    <img src="img/Logo_HDG.webp" alt="" width="120" height="100">
+                </figure>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#pre-venda">Loja</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contato">Trabalhe Conosco</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sobre">Sobre Nós</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Nossos Jogos
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="flappyCat.html">Flappy Cat</a></li>
+                            <li><a class="dropdown-item" href="toTheHel.html">To The Hel</a></li>
+                            <li><a class="dropdown-item" href="#skyfighter">Skyfighter e os Aerochamas</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<!-- src="games/ProjetoHel/index.html"  -->
+
+<body>
+
+    <main>
+        <h1>Jogue Agora!</h1>
+        <div class="iframe-container">
+            <iframe id="gameIframe" src="games/ProjetoHel/index.html" allow="fullscreen"
+                title="To The Hel - Jogo Incrível">
+            </iframe>
+        </div>
+        <!-- Informações do Jogo -->
+        <div class="game-info">
+            <h2>To The Hel (Demonstração)</h2>
+            <p>
+                To The Hel é um jogo roguelike cativante onde o jogador assume o papel de Aren, condenada ao Reino
+                sombrio de Helheim após sua morte.
+            </p>
+
+            <!-- Controles do Jogo -->
+            <div class="controls">
+                <h3>Controles</h3>
+                <ul>
+                    <li>
+                        <strong>WASD
+                            <img src="img/keyboard-button.png" alt="Teclas WASD do Teclado" width="80"> ou
+                            <img src="img/keys.png" alt="Setas do Teclado" width="80"> Setas
+                        </strong> - Movimentar e
+                        Pular
+                    </li>
+                    <li>
+                        <strong>
+                            <img src="img/click.png" alt="Botão esquerdo do Mouse" width="80"> Clique do Mouse
+                        </strong>
+                        - Atacar
+                    </li>
+                    <li>
+                        <strong>
+                            <img src="img/shift.png" alt="Tecla Shift do Teclado" width="80"> Shift
+                        </strong> - Correr
+                    </li>
+                </ul>
+            </div>
+        </div>
+        </div>
+
+    </main>
+
+    <footer id="contato">
+        <div class="container">
+            <div class="row">
+
+                <!-- Contato -->
+                <div class="col-md-4 footer-contact">
+                    <h5>Contato</h5>
+                    <p>Email: high_dream_games@gmail.com</p>
+                    <p>Telefone: (21) 4002-8922</p>
+                    <p>Endereço: Rua dos Devs, 123 - Rio de Janeiro, RJ</p>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="col-md-4 footer-newsletter">
+                    <h5>Newsletter</h5>
+                    <p>Inscreva-se para receber nossas novidades:</p>
+                    <form>
+                        <input type="email" placeholder="Seu email" required>
+                        <button type="submit">Assinar</button>
+                    </form>
+                </div>
+
+                <!-- Redes Sociais -->
+                <div class="col-md-4 footer-social">
+                    <h5>Siga-nos</h5>
+                    <a href="https://www.facebook.com/FlamengoOficial" target="_blank"><img
+                            src="img/face_logo.png" width="50"></a>
+                    <a href="https://www.instagram.com/flamengo/" target="_blank"><img
+                            src="img/insta_logo.png" width="50"></a>
+                    <a href="https://x.com/flamengo?mx=2" target="_blank"><img src="img/x_logo.png" width="50"></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rodapé Inferior -->
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 High-Dream Games. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- <footer id="contato">
+        <div id="footer-contato">
+            <p>&copy; 2025 High-Dream Games. Todos os direitos reservados.</p>
+        </div>
+        <div id="footer-contato">
+            <h2>contato</h2>
+            <p>Email: high_dream_games@gmail.com</p>
+            <p>Telefone: (21)4002-8922</p>
+        </div>
+        <div class="footer-social">
+            <a href="https://www.facebook.com/FlamengoOficial" target="_blank"><img src="img/face_logo.png"
+                    width="20"></a>
+            <a href="https://www.instagram.com/flamengo/" target="_blank"><img src="img/insta_logo.png" width="20"></a>
+            <a href="https://x.com/flamengo?mx=2" target="_blank"><img src="img/x_logo.png" width="20"></a>
+        </div>
+    </footer> -->
+
+    <!-- Link JS Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
