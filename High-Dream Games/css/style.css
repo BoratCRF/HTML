@@ -64,6 +64,139 @@ body {
 
 /* Novo Carrossel */
 #scene {
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+
+#left-zone {
+    background: white;
+    height: 100%;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    padding: 10px;
+}
+
+.list-group {
+    list-style-type: none; 
+    padding: 0; 
+    margin: 0; 
+}
+
+.list-group-item {
+    cursor: pointer;
+    border: none;
+    padding: 15px;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center; 
+    height: 100px; 
+    margin: 10px 0; 
+}
+
+.list-group-item img {
+    width: 50px; 
+    height: auto; 
+    object-fit: contain; 
+    margin-right: 10px;
+}
+.list-group-item:hover {
+    background-color: #f1f1f1;
+}
+
+.list-group-item input[type="radio"] {
+    display: none;
+}
+
+.label_toTheHel, .label_flappyCat, .label_skyfighter {
+    display: block;
+    opacity: 0.5;
+    font-size: 16px;
+    padding-left: 70px;
+    position: relative;
+}
+
+.content {
+    display: none;
+    text-align: center;
+    padding: 30px;
+    background-color: #f1f1f1;
+    margin-top: 20px;
+    box-sizing: border-box;
+}
+
+.content.d-none {
+    display: none !important;
+}
+
+.picto {
+    width: 400px;
+    height: 300px; 
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+
+input[type="radio"]#radio_toTheHel:checked ~ #content-zone .content_toTheHel {
+    display: block;
+}
+
+input[type="radio"]#radio_flappyCat:checked ~ #content-zone .content_flappyCat {
+    display: block;
+}
+
+input[type="radio"]#radio_skyfighter:checked ~ #content-zone .content_skyfighter {
+    display: block;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    #left-zone {
+        width: 100%;
+    }
+
+    .list-group {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .content {
+        width: 100%;
+        height: auto;
+    }
+
+    .picto {
+        width: 400px; 
+        height: 300px; 
+        object-fit: cover; 
+        margin-bottom: 20px;
+    }
+    .list-group-item img{
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .label_toTheHel, .label_flappyCat, .label_skyfighter {
+        padding-left: 30px;
+        font-size: 14px;
+    }
+
+    .picto {
+        height: 200px;
+        width: 300px;
+    }
+}
+
+
+
+/* 
+#scene {
     display: flex;
     align-items: center;
     justify-content: left;
@@ -203,7 +336,9 @@ body {
         opacity: 0;
     }
 }
+ */
 
+/* profile */
 .profile-container {
     max-width: 1200px;
     margin: 0 auto;
