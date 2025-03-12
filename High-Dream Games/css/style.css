@@ -166,7 +166,7 @@ body {
 }
 
 .content_skyfighter .picto {
-    background-image: url('img/skyfighter_thumb.png');
+    background-image: url('../img/Skyfighter.png');
 }
 
 .item input:checked~label {
@@ -246,6 +246,7 @@ body {
     max-height: 400px;
     overflow-y: auto;
 }
+
 
 
 /* Footer */
