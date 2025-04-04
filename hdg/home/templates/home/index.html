@@ -1,7 +1,8 @@
 {% extends "global/base.html" %}
 
 {% block main %}
-  
+{% load static %}
+
   <main>
     <!-- Novo Carrossel -->
     <section id="scene">
@@ -46,7 +47,7 @@
       <div class="row">
         <!-- Coluna do Avatar e Descrição -->
         <div class="col-md-4 text-center">
-          <img src="img/avatar_ME.png" alt="Avatar" class="avatar">
+          <img src="{% static 'global/img/avatar_ME.png' %}" alt="Avatar" class="avatar">
           <div class="profile-info">
             <h2>Vinicius 'BoratCRF' Lino</h2>
             <p>
@@ -61,13 +62,13 @@
           <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img src="img/C3TTH.png" class="d-block w-100" alt="Imagem 1">
+                <img src="{% static 'global/img/C3TTH.png' %}" class="d-block w-100" alt="Imagem 1">
               </div>
               <div class="carousel-item">
-                <img src="img/C2FPC.png" class="d-block w-100" alt="Imagem 2">
+                <img src="{% static 'global/img/C2FPC.png' %}" class="d-block w-100" alt="Imagem 2">
               </div>
               <div class="carousel-item">
-                <img src="img/C2SFT.png" class="d-block w-100" alt="Imagem 3">
+                <img src="{% static 'global/img/C2SFT.png' %}" class="d-block w-100" alt="Imagem 3">
               </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">

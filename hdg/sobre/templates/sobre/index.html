@@ -1,7 +1,7 @@
-{% extends "global/base.html" %}
+{% extends "global/basesobre.html" %}
 
 {% block main %}
-
+{% load static %}
 <main class="container my-5" id="sobre">
     <div class="row">
         <div class="col-md-6">
@@ -43,7 +43,7 @@
             </p>
         </div>
         <div class="col-md-6">
-            <img src="img/Logo_HDG.png" alt="Imagem da logo High-Dream Games" class="img-fluid rounded">
+            <img src="{% static "global/img/Logo_HDG.png" %}" alt="Imagem da logo High-Dream Games" class="img-fluid rounded">
         </div>
     </div>
 </main>

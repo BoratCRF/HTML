@@ -1,6 +1,7 @@
 {% extends "global/base.html" %}
 
 {% block main %}
+{% load static %}
 
     <!-- Navbar -->
     <nav class="navbar bg-body-tertiary">
@@ -18,7 +19,7 @@
             <!-- To The Hel -->
             <div class="col-12 col-sm-12 col-md-4 mb-4">
                 <div class="card h-100">
-                    <img src="img/logo_ToTheHel.png" class="card-img-top" alt="To The Hel">
+                    <img src="{% static 'global/img/logo_ToTheHel.png' %}" class="card-img-top" alt="To The Hel">
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title"><strong>To The Hel</strong></h5>
                         <p class="card-text flex-grow-1">To The Hel é um jogo roguelike cativante onde o jogador assume
@@ -34,7 +35,7 @@
             <!-- Flappy Cat -->
             <div class="col-12 col-sm-12 col-md-4 mb-4">
                 <div class="card h-100">
-                    <img src="img/logo_FlappyCat.png" class="card-img-top" alt="Flappy Cat">
+                    <img src="{% static 'global/img/logo_FlappyCat.png' %}" class="card-img-top" alt="Flappy Cat">
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title"><strong>Flappy Cat</strong></h5>
                         <p class="card-text flex-grow-1">Flappy Cat é um jogo cativante onde o jogador controla um gato
@@ -50,7 +51,7 @@
             <!-- Skyfighter e os Aerochamas -->
             <div class="col-12 col-sm-12 col-md-4 mb-4">
                 <div class="card h-100">
-                    <img src="img/logo_skyfighter.png" class="card-img-top" alt="Skyfighter e os Aerochamas">
+                    <img src="{% static 'global/img/logo_skyfighter.png' %}" class="card-img-top" alt="Skyfighter e os Aerochamas">
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title"><strong>Skyfighter e os Aerochamas</strong></h5>
                         <p class="card-text flex-grow-1">Skyfighter e os Aerochamas, é um jogo emocionante e cativante

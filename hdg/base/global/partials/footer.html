@@ -1,3 +1,4 @@
+{% load static %}
 <footer id="contato">
     <div class="container">
       <div class="row">
@@ -23,10 +24,10 @@
         <!-- Redes Sociais -->
         <div class="col-md-4 footer-social">
           <h5>Siga-nos</h5>
-          <a href="https://www.facebook.com/FlamengoOficial" target="_blank"><img src="img/face_logo.png"
+          <a href="https://www.facebook.com/FlamengoOficial" target="_blank"><img src="{% static 'global/img/face_logo.png' %}"
               width="50"></a>
-          <a href="https://www.instagram.com/flamengo/" target="_blank"><img src="img/insta_logo.png" width="50"></a>
-          <a href="https://x.com/flamengo?mx=2" target="_blank"><img src="img/x_logo.png" width="50"></a>
+          <a href="https://www.instagram.com/flamengo/" target="_blank"><img src="{% static 'global/img/insta_logo.png' %}" width="50"></a>
+          <a href="https://x.com/flamengo?mx=2" target="_blank"><img src="{% static 'global/img/x_logo.png' %}" width="50"></a>
         </div>
       </div>
     </div>

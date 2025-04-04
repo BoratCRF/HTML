@@ -1,9 +1,11 @@
+{% load static %}
+
 <header>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
         <a class="navbar-brand" href="{% url 'home' %}">
           <figure>
-            <img src="img/Logo_HDG.png" alt="" width="120" height="100">
+            <img src="{% static 'global/img/Logo_HDG.png' %}" alt="" width="120" height="100">
           </figure>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
@@ -30,13 +32,13 @@
               </a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item d-flex align-items-center" href="{% url 'toTheHel' %}"><img
-                      src="img/logo_ToTheHel.png" alt="To The Hel" class="dropdown-img me-2" width="24" height="24">To The
+                      src="{% static 'global/img/logo_ToTheHel.png' %}" alt="To The Hel" class="dropdown-img me-2" width="24" height="24">To The
                     Hel</a></li>
                 <li><a class="dropdown-item d-flex align-items-center" href="{% url 'flappyCat' %}"><img
-                      src="img/logo_FlappyCat.png" alt="Flappy Cat" class="dropdown-img me-2" width="24"
+                      src="{% static 'global/img/logo_FlappyCat.png' %}" alt="Flappy Cat" class="dropdown-img me-2" width="24"
                       height="24">Flappy Cat</a></li>
                 <li><a class="dropdown-item d-flex align-items-center" href="{% url 'skyF' %}"><img
-                      src="img/logo_skyfighter.png" alt="Skyfighter e os Aerochamas" class="dropdown-img me-2" width="24"
+                      src="{% static 'global/img/logo_skyfighter.png' %}" alt="Skyfighter e os Aerochamas" class="dropdown-img me-2" width="24"
                       height="24">Skyfighter e os Aerochamas</a></li>
               </ul>
             </li>

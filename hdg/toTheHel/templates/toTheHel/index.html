@@ -1,10 +1,11 @@
-{% extends "global/base.html" %}
+{% extends "global/basegames.html" %}
 
 {% block main %}
+{% load static %}
     <main>
         <h1>Jogue Agora!</h1>
         <div class="iframe-container">
-            <iframe id="gameIframe" src="games/ProjetoHel/index.html" allow="fullscreen"
+            <iframe id="gameIframe" src="{% static "global/games/ProjetoHel/index.html" %}" allow="fullscreen"
                 title="To The Hel - Jogo Incrível" >
             </iframe>
         </div>
@@ -22,20 +23,20 @@
                 <ul>
                     <li>
                         <strong>WASD
-                            <img src="img/keyboard-button.png" alt="Teclas WASD do Teclado" width="80"> ou
-                            <img src="img/keys.png" alt="Setas do Teclado" width="80"> Setas
+                            <img src="{% static "global/img/keyboard-button.png" %}" alt="Teclas WASD do Teclado" width="80"> ou
+                            <img src="{% static "global/img/keys.png" %}" alt="Setas do Teclado" width="80"> Setas
                         </strong> - Movimentar e
                         Pular
                     </li>
                     <li>
                         <strong>
-                            <img src="img/click.png" alt="Botão esquerdo do Mouse" width="80"> Clique do Mouse
+                            <img src="{% static "global/img/click.png" %}" alt="Botão esquerdo do Mouse" width="80"> Clique do Mouse
                         </strong>
                         - Atacar
                     </li>
                     <li>
                         <strong>
-                            <img src="img/shift.png" alt="Tecla Shift do Teclado" width="80"> Shift
+                            <img src="{% static "global/img/shift.png" %}" alt="Tecla Shift do Teclado" width="80"> Shift
                         </strong> - Correr
                     </li>
                 </ul>

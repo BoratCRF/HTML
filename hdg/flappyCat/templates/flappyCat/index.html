@@ -1,11 +1,12 @@
-{% extends "global/base.html" %}
+{% extends "global/basegames.html" %}
 
 {% block main %}
-  
+{% load static %}
+
   <main>
         <section class="container">
         <div class="iframe-container">
-            <iframe id="gameIframe" src="games/FlappyCat/index.html" allow="fullscreen"
+            <iframe id="gameIframe" src="{% static 'global/games/FlappyCat/index.html' %}" allow="fullscreen"
                 title="Flappy Cat - Jogo Incrível">
             </iframe>
         </div>
@@ -25,25 +26,25 @@
                 <ul>
                     <li>
                         <strong>
-                            <img src="img/keyboard-button.png" alt="Teclas WASD do Teclado" width="80"> WASD ou
-                             Setas <img src="img/keys.png" alt="Setas do Teclado" width="80">
+                            <img src="{% static 'global/img/keyboard-button.png' %}" alt="Teclas WASD do Teclado" width="80"> WASD ou
+                             Setas <img src="{% static 'global/img/keys.png' %}" alt="Setas do Teclado" width="80">
                         </strong> - Navegar no Menu
                     </li>
                     <li>
                         <strong>
-                            <img src="img/enter.png" alt="Tecla Enter do Teclado" width="80"> Enter
+                            <img src="{% static 'global/img/enter.png' %}" alt="Tecla Enter do Teclado" width="80"> Enter
                         </strong>
                         - Interagir
                     </li>
                     <li>
                         <strong>
-                            <img src="img/click.png" alt="Botão esquerdo do Mouse" width="80"> Clique do Mouse
+                            <img src="{% static 'global/img/click.png' %}" alt="Botão esquerdo do Mouse" width="80"> Clique do Mouse
                         </strong>
                         - Interagir e Pular
                     </li>
                     <li>
                         <strong>
-                        <img src="img/space.png" alt="Tecla Espaço do Teclado" width="80"> Espaço
+                        <img src="{% static 'global/img/space.png' %}" alt="Tecla Espaço do Teclado" width="80"> Espaço
                     </strong> - Pular
                     </li>
                 </ul>
