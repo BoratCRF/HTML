@@ -1,33 +1,33 @@
 {% extends "global/base.html" %}
 
 {% block main %}
-<body>
 
   <main class="container">
     <section class="row" id="trabalheConosco">
       <h1>Trabalhe Conosco</h1>
       <H3>Preencha este formulário abaixo com seus dados, para que possamos entrar em contato:</H3>
-      <form class="row g-3">
+      <form class="row g-3" method="post" action="{% url 'gravar' %}">
+        {% csrf_token %}
         <div class="col-md-6 ">
           <label for="nome" class="form-label">Nome</label>
-          <input type="text" class="form-control" id="nome" placeholder="Coloque aqui seu nome" required>
+          <input type="text" class="form-control" name="nome" id="nome" placeholder="Coloque aqui seu nome" required>
         </div>
         <div class="col-md-6">
           <label for="email" class="form-label">Email</label>
-          <input type="email" class="form-control" id="email" placeholder="Coloque aqui seu email" required>
+          <input type="email" class="form-control" name="email" id="email" placeholder="Coloque aqui seu email" required>
         </div>
         <div class="col-md-6">
           <label for="Telefone" class="form-label">Telefone</label>
-          <input type="tel" class="form-control" id="telefone"
+          <input type="tel" class="form-control" id="telefone" name="telefone"
             placeholder="Coloque aqui seu telefone> +55 (00) 00000-0000">
         </div>
         <div class="col-md-6">
           <label for="curriculo" class="form-label">Curriculo</label>
-          <input type="file" class="form-control" id="curriculo">
+          <input type="file" class="form-control" name="curriculo" id="curriculo">
         </div>
         <div class="col-md-12">
           <label for="mensagem" class="form-label">Mensagem</label>
-          <textarea type="text" class="form-control" id="mensagem" rows="5"
+          <textarea type="text" class="form-control" name="mensagem" id="mensagem" rows="5"
             placeholder="Diga-nos porquê você gostaria de trabalhar conosco."></textarea>
         </div>
         <div class="col-12">
