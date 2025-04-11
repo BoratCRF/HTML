@@ -15,8 +15,9 @@
         <div class="col-md-4 footer-newsletter">
           <h5>Newsletter</h5>
           <p>Inscreva-se para receber nossas novidades:</p>
-          <form>
-            <input type="email" placeholder="Seu email" required>
+          <form method="post" action="{% url 'gravarsub' %}">
+            {% csrf_token %}
+            <input id="emailsub" name="emailsub" type="email" placeholder="Seu email" required>
             <button type="submit">Assinar</button>
           </form>
         </div>
