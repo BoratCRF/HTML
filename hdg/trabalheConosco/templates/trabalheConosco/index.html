@@ -8,7 +8,7 @@
       <H3>Preencha este formulário abaixo com seus dados, para que possamos entrar em contato:</H3>
       <form class="row g-3" method="post" action="{% url 'gravar' %}">
         {% csrf_token %}
-        <div class="col-md-6 ">
+        <div class="col-md-6">
           <label for="nome" class="form-label">Nome</label>
           <input type="text" class="form-control" name="nome" id="nome" placeholder="Coloque aqui seu nome" required>
         </div>
