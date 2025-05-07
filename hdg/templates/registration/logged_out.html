@@ -2,6 +2,7 @@
 
 
 {% block main %}
-  <p>Desconectado!</p>
-  <a href="{% url 'login'%}">Clique aqui para fazer login novamente.</a>
+{% load static %}
+  <p style="color: #fff; font-size: 20px; text-align: center;">Desconectado!</p>
+  <a style="color: #fff; font-size: 20px; text-align: center;" href="{% url 'login'%}">Clique aqui para fazer login novamente.</a>
 {% endblock main %}

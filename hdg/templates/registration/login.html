@@ -2,58 +2,94 @@
 
 
 {% block main %}
+{% load static %}
 
 
-  {% if form.errors %}
-    <p>Seu nome de usuário e senha não correspondem. Por favor, tente novamente.</p>
-  {% endif %}
 
 
-  {% if next %}
-    {% if user.is_authenticated %}
-      <p>Sua conta não tem acesso a esta página. Para prosseguir,
-        faça login com uma conta que tenha acesso.</p>
-    {% else %}
-      <p>Faça login para ver esta página.</p>
-    {% endif %}
-  {% endif %}
-<main class="container">
-  <section class="row g-3" id="registration">
-    <form method="post" action="{% url 'login' %}" class="form-control">
-    {% csrf_token %}
-        <div class="col-md-3">
-          <label for="nome" class="form-label">Usuário:</label>
-          <input type="text" class="form-control" name="username" id="username" placeholder="Coloque aqui seu nome" required>
-        </div>
-        {% comment %} <div class="col-md-3">
-          <label for="email" class="form-label">Email</label>
-          <input type="email" class="form-control" name="email" id="email" placeholder="Coloque aqui seu email" required>
-        </div> {% endcomment %}
-        <div class="col-md-3">
-          <label for="password" class="form-label">Senha:</label>
-          <input type="password" class="form-control" name="password" id="password" placeholder="Coloque aqui sua senha" required>
-        </div>
-
-    {% comment %} <table>
-      <tr>
-        <td>{{ form.username.label_tag }}</td>
-        <td>{{ form.username }}</td>
-      </tr>
-      <tr>
-        <td>{{ form.password.label_tag }}</td>
-        <td>{{ form.password }}</td>
-      </tr>
-    </table> {% endcomment %}
-    <input type="submit" value="login" />
-    <input type="hidden" name="next" value="{{ next }}" />
 
 
-    {# Supõe que você configure a visualização password_reset em seu URLconf #}
-    <p><a href="{% url 'password_reset' %}">Esqueceu a senha ?</a></p>
-   
-    </form>
-  </section>
+{% comment %} {% if form.errors %}
+<p>Seu nome de usuário e senha não correspondem. Por favor, tente novamente.</p>
+{% endif %}
+
+
+{% if next %}
+{% if user.is_authenticated %}
+<p>Sua conta não tem acesso a esta página. Para prosseguir,
+  faça login com uma conta que tenha acesso.</p>
+{% else %}
+<p>Faça login para ver esta página.</p>
+{% endif %}
+{% endif %} {% endcomment %}
+
+<main>
+  <div class="login-container">
+    <div class="logo">
+      <img src="{% static 'global/img/Logo_HDG.png' %}" class="img-fluid mb-3 w-50 h-50" alt="Logo">
+    </div>
+    <form method="post" action="{% url 'login' %}">
+      {% csrf_token %}
+      <div class="mb-3">
+        <label for="username" class="form-label">Usuário</label>
+        <input type="text" class="form-control" id="username" name="username" required autofocus>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Senha</label>
+        <input type="password" class="form-control" id="password" name="password" required>
+        <button type="button" class="btn btn-outline-light" id="togglePassword">
+          👁
+        </button>
+      </div>
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="remember" name="remember">
+    <label class="form-check-label" for="remember">Lembrar de mim</label>
+  </div>
+  <button type="submit" class="btn btn-login w-100">Entrar</button>
+  <input type="hidden" name="next" value="{{ next }}" />
+
+  {# Supõe que você configure a visualização password_reset em seu URLconf #}
+  <p><a href="{% url 'password_reset' %}">Esqueceu a senha ?</a></p>
+  </form>
+  </div>
 </main>
 
- 
+<script>
+  const togglePassword = document.getElementById('togglePassword');
+  const passwordField = document.getElementById('password');
+
+  togglePassword.addEventListener('click', function () {
+      const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+      passwordField.setAttribute('type', type);
+      this.textContent = type === 'text' ? '🙈' : '👁';
+  });
+</script>
+
+<!-- <main class="container">
+  <section class="row" id="registration">
+    <form class="row g-3" method="post" action="{% url 'login' %}" class="form-control">
+      {% csrf_token %}
+      <div class="col-md-6">
+        <label for="nome" class="form-label">Usuário</label>
+        <input type="text" class="form-control" name="username" id="username" placeholder="Coloque aqui seu nome"
+          required>
+      </div>
+      <div class="col-md-6">
+        <label for="password" class="form-label">Senha</label>
+        <input type="password" class="form-control" name="password" id="password" placeholder="Coloque aqui sua senha"
+          required>
+      </div>
+      <div class="col-12">
+        <input type="submit" value="login" />
+        <input type="hidden" name="next" value="{{ next }}" />
+      </div>
+
+      {# Supõe que você configure a visualização password_reset em seu URLconf #}
+      <p><a href="{% url 'password_reset' %}">Esqueceu a senha ?</a></p>
+
+    </form>
+  </section>
+</main> -->
+
+
 {% endblock main %}
