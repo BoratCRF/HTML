@@ -5,7 +5,7 @@ from django.urls import include, path
 urlpatterns = [
     path('',include('home.urls')),
     path('home/',include('home.urls')),
-    path('loja/', include('loja.urls')),
+    path('perfil/', include('perfil.urls')),
     path('flappyCat/', include('flappyCat.urls')),
     path('skyF/', include('skyF.urls')),
     path('sobre/', include('sobre.urls')),
@@ -16,6 +16,5 @@ urlpatterns = [
 
 urlpatterns += [
     path('accounts/', include('django.contrib.auth.urls')),
-    path('accounts/signup', include('django.contrib.auth.urls')),
+    path("accounts/", include("accounts.urls")),
 ]
-
