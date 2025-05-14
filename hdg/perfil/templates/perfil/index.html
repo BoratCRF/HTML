@@ -1,184 +1,60 @@
-{% extends "global/baseloja.html" %}
+{% extends "global/base.html" %}
 
 {% block main %}
 {% load static %}
-
-    <!-- Navbar -->
-    <nav class="navbar bg-body-tertiary">
-        <div class="container">
-            <a class="navbar-brand" href="#">Loja High-Dream Games</a>
-            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cartModal">
-                Carrinho (<span id="cartCount">0</span>)
-            </button>
-        </div>
-    </nav>
-
-    <!-- Produtos -->
-    <div class="container mt-6">
-        <div class="row">
-            <!-- To The Hel -->
-            <div class="col-12 col-sm-12 col-md-4 mb-4">
-                <div class="card h-100">
-                    <img src="{% static 'global/img/logo_ToTheHel.png' %}" class="card-img-top" alt="To The Hel">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title"><strong>To The Hel</strong></h5>
-                        <p class="card-text flex-grow-1">To The Hel é um jogo roguelike cativante onde o jogador assume
-                            o papel de Aren, condenada ao Reino
-                            sombrio de Helheim após sua morte.</p>
-                        <p class="h4">R$ 79,90</p>
-                        <button class="btn btn-primary mt-auto" onclick="addToCart(1, 'To The Hel', 79.90)">Adicionar ao
-                            Carrinho</button>
-                    </div>
+<section id="perfil">
+    <div class="container">
+        <h1>Perfil do Usuário</h1>
+        
+        <!-- Mensagens de feedback -->
+        {% if messages %}
+            {% for message in messages %}
+                <div class="messages {{ message.tags }}">
+                    {{ message }}
                 </div>
-            </div>
+            {% endfor %}
+        {% endif %}
 
-            <!-- Flappy Cat -->
-            <div class="col-12 col-sm-12 col-md-4 mb-4">
-                <div class="card h-100">
-                    <img src="{% static 'global/img/logo_FlappyCat.png' %}" class="card-img-top" alt="Flappy Cat">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title"><strong>Flappy Cat</strong></h5>
-                        <p class="card-text flex-grow-1">Flappy Cat é um jogo cativante onde o jogador controla um gato
-                            que precisa pular e desviar de
-                            obstáculos para sobreviver.</p>
-                        <p class="h4">R$ 7,90</p>
-                        <button class="btn btn-primary mt-auto" onclick="addToCart(2, 'Flappy Cat', 7.90)">Adicionar ao
-                            Carrinho</button>
-                    </div>
+        <div class="profile-section">
+            <!-- Imagem de perfil -->
+            {% if user_profile.profile_image %}
+                <img src="{{ user_profile.profile_image.url }}" alt="Foto de perfil" class="profile-image">
+            {% else %}
+                <img src="{% static 'global/img/perfil/avatar.png' %}" alt="Foto de perfil padrão" class="profile-image">
+            {% endif %}
+            
+            <!-- Formulário de atualização -->
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                
+                <div class="form-group">
+                    <label for="first_name">Nome</label>
+                    <input type="text" id="first_name" name="first_name" value="{{ user.first_name }}" required>
                 </div>
-            </div>
-
-            <!-- Skyfighter e os Aerochamas -->
-            <div class="col-12 col-sm-12 col-md-4 mb-4">
-                <div class="card h-100">
-                    <img src="{% static 'global/img/logo_skyfighter.png' %}" class="card-img-top" alt="Skyfighter e os Aerochamas">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title"><strong>Skyfighter e os Aerochamas</strong></h5>
-                        <p class="card-text flex-grow-1">Skyfighter e os Aerochamas, é um jogo emocionante e cativante
-                            que se passa no mundo mágico de Ventólia. </p>
-                        <p class="h4">R$ 5,70</p>
-                        <button class="btn btn-primary mt-auto"
-                            onclick="addToCart(3, 'Skyfighter e os Aerochamas', 5.70)">Adicionar ao Carrinho</button>
-                    </div>
+                
+                <div class="form-group">
+                    <label for="username">Nome de usuário</label>
+                    <input type="text" id="username" name="username" value="{{ user.username }}" required>
                 </div>
-            </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" value="{{ user.email }}" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Nova senha (deixe em branco para não alterar)</label>
+                    <input type="password" id="password" name="password">
+                </div>
+                
+                <div class="form-group">
+                    <label for="profile_image">Imagem de perfil</label>
+                    <input type="file" id="profile_image" name="profile_image">
+                </div>
+                
+                <button type="submit">Atualizar Perfil</button>
+            </form>
         </div>
     </div>
-    {% comment %} <!-- Modal Carrinho -->
-    <div class="modal fade" id="cartModal" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Seu Carrinho</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <div id="cartItems" class="cart-items"></div>
-                    <hr>
-                    <p class="h5">Total: R$ <span id="cartTotal">0.00</span></p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Continuar Comprando</button>
-                    <button type="button" class="btn btn-danger" onclick="clearCart()">Limpar Carrinho</button>
-                    <button type="button" class="btn btn-success" onclick="finalizarCompra()">Finalizar Compra</button>
-                </div>
-            </div>
-        </div>
-    </div> {% endcomment %}
-
-    <script>
-        let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-        function showAlert(message, type) {
-            const alertDiv = document.createElement('div');
-            alertDiv.className = `alert alert-${type} alert-dismissible fade show mt-3`;
-            alertDiv.role = 'alert';
-            alertDiv.innerHTML = `
-            ${message}
-            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-        `;
-
-            document.getElementById('alerts').appendChild(alertDiv);
-
-            // Remove o alerta após 3 segundos
-            setTimeout(() => {
-                alertDiv.remove();
-            }, 3000);
-        }
-
-        function finalizarCompra() {
-            if (cart.length === 0) {
-                showAlert('🛒 Seu carrinho está vazio! Adicione itens antes de finalizar.', 'warning');
-                return;
-            }
-
-            const total = cart.reduce((acc, item) => acc + (item.price * item.quantity), 0);
-            showAlert(`✅ Compra finalizada com sucesso! Total: R$ ${total.toFixed(2)}`, 'success');
-
-            // Correção no fechamento do modal
-            const modalElement = document.getElementById('cartModal');
-            const modal = bootstrap.Modal.getOrCreateInstance(modalElement);
-            // modal.hide();
-
-            clearCart();
-        }
-
-        function updateCart() {
-            localStorage.setItem('cart', JSON.stringify(cart));
-            document.getElementById('cartCount').textContent = cart.reduce((acc, item) => acc + item.quantity, 0);
-
-            const cartItems = document.getElementById('cartItems');
-            const cartTotal = document.getElementById('cartTotal');
-            let total = 0;
-
-            cartItems.innerHTML = cart.map(item => `
-            <div class="d-flex justify-content-between align-items-center mb-3">
-                <div>
-                    <h6>${item.name}</h6>
-                    <p class="mb-0">${item.quantity} x R$ ${item.price.toFixed(2)}</p>
-                </div>
-                <div>
-                    <button class="btn btn-sm btn-danger" onclick="removeItem(${item.id})">×</button>
-                </div>
-            </div>
-        `).join('');
-
-            total = cart.reduce((acc, item) => acc + (item.price * item.quantity), 0);
-            cartTotal.textContent = total.toFixed(2);
-        }
-
-        function addToCart(id, name, price) {
-            const existingItem = cart.find(item => item.id === id);
-
-            if (existingItem) {
-                existingItem.quantity++;
-            } else {
-                cart.push({ id, name, price, quantity: 1 });
-            }
-
-            updateCart();
-            showAlert(`✔️ ${name} adicionado ao carrinho!`, 'success');
-        }
-
-        function removeItem(id) {
-            const item = cart.find(item => item.id === id);
-            cart = cart.filter(item => item.id !== id);
-            updateCart();
-            showAlert(`🗑️ ${item.name} removido do carrinho!`, 'danger');
-        }
-
-        function clearCart() {
-            if (cart.length > 0) {
-                showAlert('🧹 Carrinho limpo com sucesso!', 'info');
-            }
-            cart = [];
-            updateCart();
-        }
-
-        // Inicializar carrinho
-        updateCart();
-    </script>
-
-    <!-- Adicione este div para os alertas (coloque logo após a navbar) -->
-    <div id="alerts" class="container position-fixed top-0 start-50 translate-middle-x" style="z-index: 9999;"></div>
+</section>
 {% endblock main %}

@@ -137,6 +137,8 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'base/static'),
     BASE_DIR / 'base' / 'static'
 ]
+MEDIA_URL = 'global/img/perfil/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Chamando arquivos estáticos pelo diretório
 # STATICFILES_DIRS = [
