@@ -3,19 +3,23 @@
 <header>
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="{% url 'home' %}">
+      <!-- Logo -->
+      <a class="navbar-brand me-auto d-flex align-items-center" href="{% url 'home' %}" style="text-align: center;">
         <figure>
-          <img src="{% static 'global/img/Logo_HDG.png' %}" alt="" width="120" height="100">
+          <img src="{% static 'global/img/Logo_HDG.png' %}" alt="" width="150" height="120">
         </figure>
       </a>
+
+      <!-- Botão Hamburger -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav mx-auto">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Início</a>
+            <a class="nav-link" href="{% url 'home' %}">Início</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'trabalheConosco' %}">Trabalhe Conosco</a>
@@ -28,39 +32,42 @@
               Nossos Jogos
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item d-flex align-items-center" href="{% url 'toTheHel' %}"><img
-                    src="{% static 'global/img/logo_ToTheHel.png' %}" alt="To The Hel" class="dropdown-img me-2"
-                    width="24" height="24">To The
-                  Hel</a></li>
-              <li><a class="dropdown-item d-flex align-items-center" href="{% url 'flappyCat' %}"><img
-                    src="{% static 'global/img/logo_FlappyCat.png' %}" alt="Flappy Cat" class="dropdown-img me-2"
-                    width="24" height="24">Flappy Cat</a></li>
-              <li><a class="dropdown-item d-flex align-items-center" href="{% url 'skyF' %}"><img
-                    src="{% static 'global/img/logo_skyfighter.png' %}" alt="Skyfighter e os Aerochamas"
-                    class="dropdown-img me-2" width="24" height="24">Skyfighter e os Aerochamas</a></li>
+              <li><a class="dropdown-item" href="{% url 'toTheHel' %}">To The Hel</a></li>
+              <li><a class="dropdown-item" href="{% url 'flappyCat' %}">Flappy Cat</a></li>
+              <li><a class="dropdown-item" href="{% url 'skyF' %}">Skyfighter e os Aerochamas</a></li>
             </ul>
           </li>
-          {% if user.is_authenticated %}
-          <li class="nav-item">
-            <span class="nav-link active">Usuário: {{ user.get_username }}</span>
-            <a class="nav-link" href="{% url 'perfil' %}">Perfil</a>
-          </li>
-          <li class="nav-item">
-            <form method="post" action="{% url 'logout' %}" style="display: inline;">
-              {% csrf_token %}
-              <button type="submit" class="btn btn-danger nav-link active"
-                style=" text-decoration: underline;">
-                Logout
-              </button>
-            </form>
-          </li>
-          {% else %}
-          <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{% url 'login'%}?next={{request.path}}">Login</a>
-          <a class="nav-link active" aria-current="page" href="{% url 'signup'%}?next={{request.path}}">Cadastrar-se</a>
-          </li>
-          {% endif %}
         </ul>
+
+        <!-- Login / Usuário Autenticado -->
+        <div class="d-flex justify-content-end align-items-center login-section">
+          {% if user.is_authenticated %}
+          <div class="dropdown user-dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <i class="bi bi-person-circle"></i> {{ user.get_username }}
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="{% url 'perfil' %}">Perfil</a></li>
+              {% if user.is_staff or user.is_superuser %}
+              <li><a class="dropdown-item" href="/admin/">Admin</a></li>
+              {% endif %}
+              <li>
+                <form method="post" action="{% url 'logout' %}" class="logout-form">
+                  {% csrf_token %}
+                  <button type="submit" class="dropdown-item logout-btn">
+                    <i class="bi bi-box-arrow-right"></i> Logout
+                  </button>
+                </form>
+              </li>
+            </ul>
+          </div>
+          {% else %}
+          <a class="btn btn-danger login-highlight ms-3" href="{% url 'login' %}?next={{request.path}}">
+            <i class="bi bi-box-arrow-in-right"></i> Login
+          </a>
+          {% endif %}
+        </div>
       </div>
     </div>
   </nav>
