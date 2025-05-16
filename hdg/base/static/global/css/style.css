@@ -327,144 +327,180 @@ body {
 
 /* Novo Carrossel */
 #scene {
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    width: 1000px;
-    height: 400px;
-    position: relative;
-    margin: 50px auto;
-    background-color: white;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 1000px; /* seu tamanho original */
+  height: 400px;
+  position: relative;
+  margin: 50px auto;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  overflow: hidden;
+  padding: 1;
+  box-sizing: border-box;
 }
 
 #left-zone {
-    background: white;
-    height: 75%;
-    width: 350px;
-    display: flex;
-    align-items: center;
+  background: white;
+  height: 100%;
+  width: 350px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  box-sizing: border-box;
 }
 
 .list {
-    display: flex;
-    list-style: none;
-    flex-direction: column;
-    padding: 0;
-    margin: 0;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
 }
 
 .item input[type="radio"] {
-    display: none;
+  display: none;
 }
 
 .item label {
-    display: block;
-    opacity: 0.5;
-    height: 50px;
-    line-height: 50px;
-    padding-left: 70px;
-    position: relative;
-    cursor: pointer;
-    transition: all 0.3s ease;
+  display: block;
+  opacity: 0.5;
+  height: 50px;
+  line-height: 50px;
+  padding-left: 70px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  user-select: none;
 }
 
 .item label:hover {
-    opacity: 0.75;
+  opacity: 0.75;
 }
 
 .item label:before {
-    content: " ";
-    position: absolute;
-    left: 15px;
-    width: 50px;
-    height: 50px;
-    background-size: 75% 75%;
-    background-repeat: no-repeat;
-    background-position: center;
+  content: " ";
+  position: absolute;
+  left: 15px;
+  width: 50px;
+  height: 50px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .label_toTheHel:before {
-    background-image: url("/static/global/img/logo_ToTheHel.png");
+  background-image: url("/static/global/img/logo_ToTheHel.png");
 }
 
 .label_flappyCat:before {
-    background-image: url("/static/global/img/logo_FlappyCat.png");
+  background-image: url("/static/global/img/logo_FlappyCat.png");
 }
 
 .label_skyfighter:before {
-    background-image: url("/static/global/img/logo_skyfighter.png");
+  background-image: url("/static/global/img/logo_skyfighter.png");
 }
 
 .content {
-    position: absolute;
-    left: 350px;
-    top: -400px;
-    width: 650px;
-    height: 400px;
-    animation-duration: 0.75s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
+  position: absolute;
+  left: 350px;
+  top: 0;
+  width: 650px;
+  height: 400px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.item input:checked ~ .content {
+  display: flex;
 }
 
 .picto {
-    width: 300px;
-    height: 175px;
-    background-size: cover;
-    background-position: center;
-    margin-bottom: 20px;
+  width: 300px;
+  height: 175px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 20px;
+  object-fit: contain;
+  border-radius: 8px;
 }
 
 .content_toTheHel .picto {
-    background-image: url("/static/global/img/ToTheHellHome.png");
+  background-image: url("/static/global/img/ToTheHellHome.png");
 }
 
 .content_flappyCat .picto {
-    background-image: url("/static/global/img/Flappy_Cat.png");
+  background-image: url("/static/global/img/Flappy_Cat.png");
 }
 
 .content_skyfighter .picto {
-    background-image: url("/static/global/img/Skyfighter.png");
+  background-image: url("/static/global/img/Skyfighter.png");
 }
 
-.item input:checked~label {
-    opacity: 1;
-    color: #F27935;
-    border-right: 4px solid #F27935;
+.item input:checked ~ label {
+  opacity: 1;
+  color: brown;
+  border-right: 4px solid brown;
 }
 
-.item input:checked~.content {
-    animation-name: slidein;
-    animation-fill-mode: forwards;
+/* RESPONSIVIDADE */
+
+@media (max-width: 1024px) {
+  #scene {
+    flex-direction: column;
+    width: 90%;
+    height: auto;
+  }
+  
+  #left-zone {
+    width: 100%;
+    height: auto;
+    padding-left: 0;
+    margin-bottom: 20px;
+  }
+  
+  .content {
+    position: relative;
+    left: 0;
+    width: 100%;
+    height: auto;
+  }
+  
+  .picto {
+    width: 200%;
+    max-width: 350px;
+    height: auto;
+  }
 }
 
-@keyframes slidein {
-    0% {
-        top: -400px;
-        opacity: 0;
-    }
-
-    100% {
-        top: 0;
-        opacity: 1;
-    }
-}
-
-@keyframes slideout {
-    0% {
-        top: 0;
-        opacity: 1;
-    }
-
-    100% {
-        top: -400px;
-        opacity: 0;
-    }
+@media (max-width: 768px) {
+  .item label {
+    padding-left: 55px;
+    height: 45px;
+    line-height: 45px;
+  }
+  
+  .item label:before {
+    width: 40px;
+    height: 40px;
+    left: 10px;
+  }
+  
+  .picto {
+    max-width: 90vw;
+    height: auto;
+    margin-bottom: 15px;
+  }
 }
 
 .profile-container {
